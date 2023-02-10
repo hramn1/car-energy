@@ -146,7 +146,7 @@
     }
   }
 }
-@media (min-width: global.$tablet-width) and (max-width: global.$desktop-width)  {
+@media (min-width: global.$tablet-width) and (max-width: 1439px)  {
 .dop-goods__present{
   display: flex;
   justify-content: flex-end;
