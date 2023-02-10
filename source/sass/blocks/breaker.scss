@@ -1,0 +1,27 @@
+@use '../global.scss';
+.breaker{
+  display: none;
+  &--mobile{
+    display: inline-block;
+  }
+}
+@media (min-width: global.$tablet-width) {
+  .breaker{
+    &--mobile{
+      display: none;
+    }
+    &--tablet{
+      display: inline-block;
+    }
+  }
+}
+@media (min-width: global.$desktop-width) {
+  .breaker{
+    &--mobile{
+      display: none;
+    }
+    &--desktop{
+      display: inline-block;
+    }
+  }
+}

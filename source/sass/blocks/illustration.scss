@@ -1,0 +1,298 @@
+@use '../global.scss';
+.illustration{
+  background-color: global.$bg-color;
+  padding: 10px 20px 40px;
+  &__title{
+    @include global.text-simple($fz:36px, $lh:40px);
+    margin-top: 15px;
+    margin-bottom: 40px;
+  }
+  &__text{
+    font-family: "Lato", Arial, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 12px;
+    color: global.$grey-text;
+  }
+  &__result{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__block{
+    @include global.text-simple($fz:24px, $lh:24px);
+    height: 56px;
+    width: 124px;
+    padding-top: 15px;
+    text-align: center;
+    margin-top: 10px;
+    text-transform: uppercase;
+    border: 1px solid global.$second-border;
+    border-radius: 3px;
+  }
+  &__under-text{
+    font-family: "Lato", Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    color: global.$grey-text;
+    margin-top: 5px;
+    margin-left: 22px;
+    margin-right: 22px;
+    text-transform: lowercase;
+    background-color: global.$bg-color;
+  }
+  &__cost{
+    @include global.text-simple($fz:14px, $lh:20px);
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 33px;
+    margin-bottom: 20px;
+  }
+}
+.slider-wrapper{
+  width: 280px;
+  height: 256px;
+  position: relative;
+  margin: 0 auto;
+  &__slide{
+    position: absolute;
+    width: 4px;
+    height: 256px;
+    right: calc(50% - 2px);;
+    top: calc(50% - 256px/2);
+    background: global.$black-second;
+    border-radius: 2px;
+    z-index: 30;
+    cursor: pointer;
+    color: global.$black-second;
+    &:hover{
+      background: global.$basic-green;
+      color: global.$basic-green;
+    }
+    &:active{
+      background: #5EAA2F;
+      opacity: 0.6;
+      color: #5EAA2F;
+    }
+    & svg{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -20px;
+      margin-top: -20px;
+    }
+  }
+  &__img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: global.$bg-color;
+    &--first{
+      width: 50%;
+      background-image: url(../img/fat-cat-mob@1x.png);
+      @supports (background-image: (url('/img/fat-cat-mob@1x.webp'))) {
+        background-image: url('../img/fat-cat-mob@1x.webp')
+      }
+      z-index: 2;
+      background-size: cover;
+        @media (min-resolution: 2dppx) {
+          background-image: url(../img/fat-cat-mob@2x.png);
+            @supports (background-image: (url('/img/fat-cat-mob@2x.webp'))) {
+              background-image: url('../img/fat-cat-mob@2x.webp')
+            }
+        }
+    }
+    &--second{
+      background-image: url(../img/slim-cat-mob@1x.png);
+      @supports (background-image: (url('/img/slim-cat-mob@1x.webp'))) {
+        background-image: url('../img/slim-cat-mob@1x.webp')
+      }
+      background-repeat: no-repeat;
+      width: 50%;
+      right: 0;
+      background-position-x: 100%;
+      background-size: cover;
+      @media (min-resolution: 2dppx) {
+        background-image: url(../img/slim-cat-mob@2x.png);
+        @supports (background-image: (url('/img/slim-cat-mob@2x.webp'))) {
+          background-image: url('../img/slim-cat-mob@2x.webp')
+        }
+      }
+    }
+  }
+}
+@media (min-width: global.$tablet-width) {
+  .illustration{
+    background-color: global.$white;
+    padding: 30px 0 0;
+    border-top: 1px solid #E6E6E6;;
+    &__title{
+      padding: 0 30px;
+      background-color: global.$white;
+      font-size: 60px;
+      line-height: 60px;
+      margin-bottom: 62px;
+    }
+    &__text{
+      background-color: global.$white;
+      font-size: 16px;
+      line-height: 24px;
+      padding: 0 30px;
+      margin-bottom: 45px;
+    }
+    &__result{
+      background-color: global.$white;
+      gap: 42px;
+      display: inline-flex;
+      padding: 0 30px;
+    }
+    &__block{
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 37px;
+      width: 162px;
+      height: 70px;
+    }
+    &__under-text{
+      font-size: 14px;
+      line-height: 14px;
+      background-color: global.$white;
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-top: 8px;
+
+    }
+    &__cost{
+      background-color: #fff;
+      margin-bottom: 265px;
+      display: inline-flex;
+      vertical-align: top;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 26px;
+      width: 175px;
+      margin-left: 135px;
+      text-align: right;
+      flex-wrap: wrap;
+      margin-top: 19px;
+      & span{
+        margin-left: auto;
+      }
+    }
+  }
+  .illustration__block:first-child .illustration__under-text{
+      margin-left: 25px;
+      margin-right: 25px;
+  }
+  .slider-wrapper{
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    padding-top: 5px;
+    background-color: global.$basic-grey;
+    padding-bottom: 100px;
+    &__slide{
+      height: 512px;
+      top: calc(50% - 256px);
+    }
+    &__img{
+      background-color: transparent;
+      &--first{
+        background-size: cover;
+        background-image: url(../img/fat-cat-tablet.png);
+        @supports (background-image: (url('/img/fat-cat-tablet.webp'))) {
+          background-image: url('../img/fat-cat-tablet.webp')
+        }
+        background-repeat: no-repeat;
+        @media (min-resolution: 2dppx) {
+          background-image: url(../img/fat-cat-tablet-2x.png);
+          @supports (background-image: (url('/img/fat-cat-tablet-2x.webp'))) {
+            background-image: url('../img/fat-cat-tablet-2x.webp')
+          }
+        }
+      }
+      &--second{
+        background-size: cover;
+        background-image: url(../img/slim-cat-tablet.png);
+        @supports (background-image: (url('/img/slim-cat-tablet.webp'))) {
+          background-image: url('../img/slim-cat-tablet.webp')
+        }
+        background-repeat: no-repeat;
+        @media (min-resolution: 2dppx) {
+          background-image: url(../img/slim-cat-tablet-2x.png);
+          @supports (background-image: (url('/img/slim-cat-tablet-2x.webp'))) {
+            background-image: url('../img/slim-cat-tablet-2x.webp')
+          }
+        }
+      }
+    }
+    &__block{
+      width: 560px;
+      height: 512px;
+      position: relative;
+      margin: -153px auto 0;
+
+    }
+  }
+}
+@media (min-width: global.$desktop-width) {
+  .illustration{
+    display: grid;
+    background-color: global.$basic-grey;
+    padding: 0;
+    border-top: 0;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "A A"
+                          "C B"
+                          "D B"
+                          "E B";
+    &__title{
+      grid-area: A;
+      margin: 0;
+      padding: 25px 110px 75px;
+    }
+    &__text{
+      grid-area: C;
+      padding: 60px 170px 20px 110px;
+      background-color: global.$basic-grey;
+      margin-bottom: 14px;
+      margin-top: 10px;
+    }
+    &__under-text{
+      background-color: #f2f2f2;
+    }
+    &__result{
+      grid-area: D;
+      padding: 10px 270px 10px 110px;
+      background-color: global.$basic-grey;
+      margin-top: 15px;
+    }
+    &__cost{
+      grid-area: E;
+      margin-left: 0;
+      padding: 10px 110px;
+      flex-wrap: nowrap;
+      width: 100%;
+      margin-top: 37px;
+      column-gap: 63px;
+      margin-bottom: 63px;
+
+      background-color: global.$basic-grey;
+      & span{
+        margin-left: 0;
+      }
+    }
+  }
+  .slider-wrapper{
+    grid-area: B;
+    padding-bottom: 0;
+
+    &__block{
+      margin: -145px 25px 0 25px;
+      padding-bottom: 0;
+    }
+  }
+}

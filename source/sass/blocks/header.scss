@@ -1,0 +1,200 @@
+@use '../global.scss';
+.container-header{
+  max-width: 520px;
+  padding: 0 2vw;
+  margin: 0 auto;
+}
+.header{
+  margin: 0 auto;
+  padding: 10px 0 12px;
+  background-color: global.$white;
+  &__logo{
+    &:hover{
+      opacity: 0.8;
+    }
+    &:active{
+      opacity: 0.6;
+    }
+  }
+  &__item-menu {
+    padding: 23px 0;
+    text-align: center;
+    border-top: 1px solid global.$border-color;
+    &:last-child{
+      border-bottom: 1px solid global.$border-color;
+    }
+    & a{
+      color: global.$black-color;
+    }
+  }
+  &__img{
+    margin-top: 2px;
+    margin-right: 10px;
+  }
+  &__nav{
+    display: flex;
+    padding: 0 20px;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    flex-wrap: wrap;
+
+  }
+  &__btn{
+    position: relative;
+    display: inline-block;
+    width: 24px;
+    height: 16px;
+    border: 0;
+    background-color: transparent;
+    border-bottom: 1.7px solid global.$black-color;
+    padding: 6px 0;
+    box-sizing: border-box;
+    transition: transform, background-color 400ms ease;
+    cursor: pointer;
+    &::after{
+      @include global.pseudoEl($width: 24px, $height: 1.5px);
+      top: -1px;
+      cursor: pointer;
+      background-color: global.$black-color;
+    }
+    &::before{
+      @include global.pseudoEl($width: 24px, $height: 1.5px);
+      top: 7px;
+      cursor: pointer;
+      background-color: global.$black-color;
+    }
+    &--close{
+      border-bottom: 0;
+      margin-top: 10px;
+      &::after{
+        transform: rotate(45deg);
+        top:0;
+      }
+      &::before{
+        transform: rotate(-45deg);
+        top:0;
+      }
+    }
+  }
+  &__menu{
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 52px;
+    right: 0;
+    z-index: 4;
+    background-color: global.$white;
+    @include global.list();
+    @include global.text-simple($fz:20px, $lh:20px);
+    font-weight: 500;
+    text-transform: uppercase;
+    color: global.$black-color;
+    &--open{
+      display: block;
+    }
+  }
+}
+.no-js .header__menu{
+  display: block;
+  position: relative;
+  top: 0;
+}
+@media (min-width: global.$tablet-width) {
+  .container-header{
+    padding: 0 3vw;
+    max-width: 1024px;
+  }
+  .no-js .header__menu{
+    display: inherit;
+  }
+  .header {
+    padding-top: 0;
+    &__btn{
+      display: none;
+    }
+    &__nav{
+      padding: 0 30px;
+    }
+    &__logo{
+      align-self: baseline;
+    }
+    &__menu{
+      display: flex;
+      position: static;
+      width: auto;
+    }
+    &__img{
+      display: none;
+    }
+    &__item-menu{
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 24px;
+      padding-top: 15px;
+      border: 0;
+      margin-left: 36px;
+      &:last-child{
+        border: none;
+      }
+      &:hover{
+        opacity: 0.6;
+      }
+      &:active{
+        opacity: 0.3;
+      }
+      &--active a{
+        padding-bottom: 8px;
+        border-bottom: 2px solid global.$basic-green;
+      }
+    }
+  }
+}
+@media (min-width: global.$desktop-width) {
+  .container-header{
+    padding: 0 4vw;
+    max-width: 1920px;
+  }
+  .header {
+    max-width: 2560px;
+    padding-top: 54px;
+    &__nav{
+      padding: 0 110px;
+    }
+    &__menu{
+      background-color: transparent;
+      & a {
+        color: global.$white;
+      }
+    }
+    &__item-menu{
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 30px;
+      &:hover{
+        opacity: 0.6;
+      }
+      &:active{
+        opacity: 0.3;
+      }
+      &--active a{
+        padding-bottom: 8px;
+        border-bottom: 2px solid global.$white;
+      }
+    }
+  }
+  .header--inner .header__item-menu{
+    &:hover{
+      opacity: 0.6;
+    }
+    &:active{
+      opacity: 0.3;
+    }
+    &--active a{
+      border-bottom: 2px solid global.$basic-green;
+    }
+    a{
+      color: global.$black-color
+    }
+  }
+}

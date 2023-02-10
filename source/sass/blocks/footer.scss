@@ -1,0 +1,195 @@
+@use "../global.scss";
+.footer{
+  margin: 0 auto 20px;
+  display: grid;
+  background-color: global.$white;
+  grid-template-rows: auto auto auto;
+  &__map{
+    width: 320px;
+    height: 362px;
+    margin: 0 auto;
+    background-image: url(../img/map-bg.jpg);
+    @supports (background-image: (url('/img/map-bg.webp'))) {
+      background-image: url('../img/map-bg.webp')
+    }
+    background-size: cover;
+    @media (min-resolution: 2dppx) {
+      background-image: url(../img/map-bg-2x.jpg);
+      @supports (background-image: (url('/img/map-bg-2x.webp'))) {
+        background-image: url('../img/map-bg-2x.webp')
+      }
+    }
+  }
+  &__bottom{
+    background-color: global.$basic-grey;
+    padding: 20px;
+  }
+  &__logo{
+    text-align: center;
+    padding-bottom: 12px;
+    padding-top: 23px;
+    border-bottom: 1px solid global.$grey-color;
+    & svg {
+      vertical-align: baseline;
+    }
+    &:hover{
+      opacity: 0.8;
+    }
+    &:active{
+      opacity: 0.6;
+    }
+  }
+}
+.social{
+  padding: 20px 0 15px;
+  border-bottom: 1px solid global.$grey-color;
+  display: flex;
+  justify-content: center;
+  &__link{
+    margin-right: 11px;
+    margin-left: 14px;
+    color: #666666;
+    &:hover{
+      color: global.$basic-green
+    }
+    &:active{
+      opacity: 0.3;
+    }
+  }
+}
+.contacts{
+  display: flex;
+  padding: 26px 20px;
+  align-content: center;
+  justify-content: space-between;
+  &--form{
+    background-color: global.$basic-grey;
+  }
+  &__text{
+    @include global.text-simple($fz: 16px, $lh:20px);
+    text-transform: uppercase;
+    flex-grow: 2;
+    width: 80%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  &__address{
+    font-family: 'Lato', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    color: global.$grey-text;
+    flex-shrink: 1.4;
+  }
+}
+.visually-hidden{
+  @include global.visually-hidden();
+}
+@media (min-width: global.$tablet-width) {
+  .footer{
+    &__map {
+      width: 100%;
+      background-image: url(../img/map-bg-tablet.jpg);
+      @supports (background-image: (url('/img/map-bg-tablet.webp'))) {
+        background-image: url('../img/map-bg-tablet.webp')
+      }
+      background-size: cover;
+      height: 400px;
+      @media (min-resolution: 2dppx) {
+        background-image: url(../img/map-bg-tablet-2x.jpg);
+        @supports (background-image: (url('/img/map-bg-tablet-2x.webp'))) {
+          background-image: url('../img/map-bg-tablet-2x.webp')
+        }
+      }
+    }
+    &__bottom{
+      display: flex;
+      justify-content: space-between;
+      align-content: baseline;
+      align-items: baseline;
+      padding: 37px 30px;
+    }
+    &__logo{
+      border-bottom: 0;
+      padding-bottom: 0;
+      & img{
+        width: 144px;
+      }
+    }
+  }
+  .social{
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-left: 22px;
+  }
+  .contacts{
+    padding: 56px 70px 63px;
+    gap: 255px;
+    &__text{
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 26px;
+
+    }
+    &__address{
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      flex-shrink: 0;
+      text-align: right;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      width: 160px;
+      justify-content: space-between;
+    }
+  }
+}
+@media (min-width: global.$desktop-width) {
+  .footer {
+    max-width: 1920px;
+    position: relative;
+
+    &__bottom {
+      padding: 48px 110px;
+    }
+
+    &__map {
+      width: 100%;
+      background-image: url(../img/map-bg-desktop.jpg);
+      @supports (background-image: (url('/img/map-bg-desktop.webp'))) {
+        background-image: url('../img/map-bg-desktop.webp')
+      }
+      background-size: contain;
+      height: 400px;
+      background-position: 0 0;
+      @media (min-resolution: 2dppx) {
+        background-image: url(../img/map-bg-desktop-2x.jpg);
+        @supports (background-image: (url('/img/map-bg-desktop-2x.webp'))) {
+          background-image: url('../img/map-bg-desktop-2x.webp')
+        }
+      }
+    }
+
+    .contacts {
+      position: absolute;
+      background-color: global.$white;
+      gap: 15px;
+      width: 565px;
+      top: 95px;
+      left: 110px;
+      padding: 60px 15px 60px 80px;
+      &__address{
+        text-align: left;
+        margin-left: 10px;
+        margin-right: auto;
+        flex-basis: 40%;
+      }
+      &__text{
+        max-width: 225px;
+      }
+    }
+  }
+}

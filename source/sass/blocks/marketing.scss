@@ -1,0 +1,152 @@
+@use '../global.scss';
+
+.marketing{
+  &__banner{
+    color: global.$white;
+    background-image: url(../img/headerBg.jpg);
+    @supports (background-image: (url('/img/headerBg.webp'))) {
+      background-image: url('../img/headerBg.webp')
+    }
+    background-size: cover;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    position: relative;
+    padding-top: 27px;
+    min-height: 302px;
+    @media (min-resolution: 2dppx) {
+      background-image: url(../img/headerBg-2x.jpg);
+      @supports (background-image: (url('/img/headerBg-2x.webp'))) {
+        background-image: url('../img/headerBg-2x.webp')
+      }
+    }
+    &::after{
+      @include global.pseudoEl($width: 100%, $height: auto);
+      bottom: 0;
+      top: 0;
+      background-color: rgba(104, 183, 56, 0.85);
+      z-index: 1;
+    }
+  }
+  &__title{
+    margin-top: 0;
+    position: relative;
+    z-index: 2;
+    @include global.text-simple($fz:36px, $lh:36px);
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  &__text{
+    z-index: 2;
+    position: relative;
+    @include global.text-simple($fz:14px, $lh:14px);
+    text-transform: uppercase;
+    text-align: center;
+  }
+  &__img {
+    position: relative;
+    z-index: 2;
+    display: block;
+    margin: -134px auto 0;
+  }
+}
+.marketing__link{
+  line-height: 22px;
+  margin-top: 3px;
+}
+@media (min-width: global.$tablet-width) {
+  .marketing {
+    position: relative;
+    &__link{
+      position: absolute;
+      top: 269px;
+      z-index: 4;
+      left: 121px;
+      width: 244px;
+      font-size: 20px;
+      line-height: 20px;
+      padding: 16px 0;
+      height: auto;
+    }
+    &__banner {
+      background-color: global.$white;
+      background-image: none;
+      min-height: auto;
+      padding-top: 40px;
+
+      &::after {
+        display: none;
+      }
+    }
+    &__img{
+      margin: 0 auto;
+    }
+
+    &__title {
+      color: global.$black-color;
+      font-size: 60px;
+      line-height: 60px;
+      text-align: left;
+      padding-left: 117px;
+      margin-bottom: 42px;
+    }
+    &__text{
+      font-size: 20px;
+      line-height: 20px;
+      color: global.$black-color;
+      text-align: left;
+      padding-left: 117px;
+
+    }
+  }
+}
+@media (min-width: global.$desktop-width) {
+  .marketing {
+    position: relative;
+    padding-bottom: 247px;
+    &__title{
+      padding-left: 190px;
+    }
+    &__text{
+      padding-left: 190px;
+    }
+    &__link{
+      position: relative;
+      top:0;
+      left:0;
+      margin-left: 190px;
+      margin-top: 51px;
+    }
+    &__img{
+      top: 13px;
+      right: 23%;
+      position: absolute;
+    }
+    &__banner {
+      padding-top: 89px;
+      &::before{
+        @include global.pseudoEl($width:50%, $height: 694px);
+        background-image: url(../img/background-desktop.jpg);
+        background-size: cover;
+          @supports (background-image: (url('/img/background-desktop.webp'))) {
+            background-image: url('../img/background-desktop.webp')
+          }
+        @media (min-resolution: 2dppx) {
+          background-image: url(../img/background-desktop-2x.jpg);
+          @supports (background-image: (url('/img/background-desktop-2x.webp'))) {
+            background-image: url('../img/background-desktop-2x.webp')
+          }
+        }
+        display: block;
+        top: -135px;
+        right: 0;
+      }
+      &::after {
+        display: block;
+        top: -135px;
+        width:50%;
+        height: 694px;
+        right:0;
+      }
+    }
+  }
+}

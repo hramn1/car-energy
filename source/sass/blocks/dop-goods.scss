@@ -1,0 +1,245 @@
+@use '../global.scss';
+.dop-goods{
+  padding: 0 20px 35px;
+  &__list{
+    @include global.list();
+  }
+  &__title{
+    &::after{
+      width: 53px;
+      right: -20px;
+      top: 15px;
+    }
+  }
+  &__item{
+    border-bottom: 1px solid global.$second-border;
+    padding: 12px 0 18px;
+    &:first-child{
+      border-top: 1px solid global.$second-border;
+
+    }
+  }
+  &__present{
+    position: relative;
+    margin-top: 35px;
+    background-image: url(../img/present.jpg);
+    background-size: cover;
+    @supports (background-image: (url('/img/present.webp'))) {
+      background-image: url('../img/present.webp')
+    }
+    @media (min-resolution: 2dppx) {
+      background-image: url(../img/present-2x.jpg);
+      @supports (background-image: (url('/img/present-2x.webp'))) {
+        background-image: url('../img/present-2x.webp')
+      }
+    }
+    &::before{
+      @include global.pseudoEl($width:100%, $height:100%);
+      background-color: rgba(104, 183, 56, 0.85);
+    }
+    & p{
+      margin: 0;
+      padding: 186px 58px 43px;
+      font-family: 'Lato',Arial,sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+      z-index: 4;
+      position: relative;
+      color: global.$white;
+      &::before{
+        @include global.pseudoEl($width:78px, $height:80px);
+        background-image: url(../img/icons/icon_gift.svg);
+        top: 57px;
+        left: 50%;
+        margin-left: -39px;
+      }
+    }
+  }
+}
+.addi-product{
+  &__title {
+    @include global.text-simple($fz: 16px, $lh: 16px);
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 9px;
+
+  }
+  &__text{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Lato', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 0;
+  }
+  &__btn{
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+@media (min-width: global.$tablet-width) {
+  .dop-goods{
+    padding: 30px 30px 76px;
+    &__title{
+      font-size: 36px;
+      line-height: 36px;
+      margin-top: 15px;
+      margin-left: 35px;
+      &::after{
+        top: 23px;
+        right: 5px;
+        width: 328px;
+      }
+      &::before{
+        @include global.pseudoEl($width: 30px);
+        background-color: global.$basic-green;
+        top: 23px;
+        left: -65px;
+      }
+    }
+    &__list{
+      margin-top: 82px;
+      border: 1px solid #CDCDCD;
+
+    }
+    &__item{
+      &:first-child{
+        border-top: 0;
+      }
+      &:last-child{
+        border-bottom: 0;
+      }
+    }
+  }
+  .addi-product{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+    &__title{
+      margin-top: 26px;
+      margin-bottom: 22px;
+      font-size: 20px;
+      line-height: 20px;
+      margin-left: 38px;
+    }
+    &__text{
+      margin-top: 29px;
+      margin-bottom: 22px;
+      font-size: 16px;
+      line-height: 20px;
+      margin-right: 38px;
+      & span{
+        margin-left: 50px;
+        min-width: 43px;
+        text-align: right;
+      }
+    }
+    &__btn{
+      width: 100%;
+      margin: 0 38px 26px;
+    }
+  }
+}
+@media (min-width: global.$tablet-width) and (max-width: global.$desktop-width)  {
+.dop-goods__present{
+  display: flex;
+  justify-content: flex-end;
+  background-image: url(../img/present-tablet.jpg);
+  @supports (background-image: (url('/img/present-tablet.webp'))) {
+    background-image: url('../img/present-tablet.webp')
+  }
+  background-size: contain;
+  margin-top: 73px;
+  background-repeat: no-repeat;
+  @media (min-resolution: 2dppx) {
+    background-image: url(../img/present-tablet-2x.jpg);
+    @supports (background-image: (url('/img/present-tablet-2x.webp'))) {
+      background-image: url('../img/present-tablet-2x.webp')
+    }
+  }
+  & p {
+    width: 162px;
+    margin-left: auto;
+    padding: 70px 124px;
+    display: inline-block;
+    box-sizing: content-box;
+    text-align: left;
+    &::before{
+      top: 59px;
+      left: -45%;
+    }
+  }
+  }
+}
+@media (min-width: global.$desktop-width) {
+  .dop-goods{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px 110px 88px;
+    justify-content: space-between;
+    &__title{
+      margin-left: 0;
+      margin-bottom: 78px;
+      &::before{
+        top: 21px;
+        left: -111px;
+        width: 71px;
+      }
+      &::after{
+        top: 21px;
+        right: -110px;
+        width: 957px;
+      }
+    }
+    &__list{
+      border: 0;
+      flex-grow: 2;
+      margin-right: 80px;
+      margin-top: 0;
+
+    }
+    &__item:first-child{
+      border-top: 1px solid #cdcdcd;
+    }
+    &__item:last-child{
+      padding-bottom: 18px;
+      border-bottom: 1px solid #cdcdcd;
+    }
+    &__present{
+      width: 245px;
+      margin-top: 0;
+      background-position: 109% 50%;
+      & p{
+        padding: 183px 40px 43px;
+
+      }
+    }
+  }
+  .addi-product{
+    flex-wrap: nowrap;
+    padding: 15px 0;
+    align-items: baseline;
+    justify-content: flex-start;
+    &__title{
+      margin: 0;
+      flex-basis: 20%;
+    }
+    &__text{
+      margin: 0 0 0 147px;
+      flex-basis: 35%;
+      & span{
+        margin-right: 30px;
+      }
+    }
+    &__btn{
+      margin: 0 0 0 auto;
+      width: 244px;
+    }
+  }
+}

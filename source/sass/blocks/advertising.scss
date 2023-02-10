@@ -1,0 +1,221 @@
+@use '../global.scss';
+
+.advertising{
+  padding: 0 20px;
+  font-family: 'Oswald', Arial, sans-serif;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  &__item{
+    background-color: global.$basic-grey;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  &__title{
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 37px;
+    text-transform: uppercase;
+    padding-left: 70px;
+    position: relative;
+    &--slim::before{
+      @include global.pseudoEl($width:53px, $height:50px);
+      background-image: url('../img/icons/cat-slim.svg');
+      background-repeat: no-repeat;
+      background-position: 50% 0;
+      top:-10px;
+      left:0;
+      z-index: 4;
+    }
+    &--pro::before{
+      @include global.pseudoEl($width:67px, $height:50px);
+      background-image: url(../img/icons/cat-pro.svg);
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      top: -7px;
+      left: -8px;
+      z-index: 4;
+    }
+  }
+  &__text{
+    font-family: Lato, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: global.$grey-text;
+    border-bottom: 1px solid global.$grey-color;
+    padding-bottom: 21px;
+    margin-top: 29px;
+  }
+  &__link{
+    text-decoration: none;
+    color: global.$black-color;
+    font-family: 'Oswald', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    text-transform: uppercase;
+    position: relative;
+    padding-right: 15px;
+    &::after{
+      @include global.pseudoEl($width:32px, $height:10px);
+      background-image: url("../img/icons/icon_arrow.svg");
+      background-repeat: no-repeat;
+      background-position-x: -7px;
+      right: -32px;
+      top: 8px;
+      transition: background-position-x, 100ms ease-in;
+    }
+    &:hover::after{
+      background-position-x: 0;
+      transition: background-position-x, 100ms ease-in;
+    }
+    &:active{
+      opacity: 0.3;
+    }
+  }
+  &__bg{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: global.$basic-green;
+    border-radius: 50%;
+    top: 23px;
+    left: 22px;
+  }
+}
+@media (min-width: global.$tablet-width) {
+  .advertising{
+    padding: 0 30px;
+    margin-top: 0;
+    &__item{
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-auto-rows: auto auto auto;
+      padding: 65px 62px 59px 52px;
+      column-gap: 35px;
+      margin-bottom: 30px;
+    }
+    &__title{
+      grid-column: 1/2;
+      grid-row: 1/2;
+      font-size: 36px;
+      line-height: 36px;
+      padding-left: 0;
+      margin-bottom: 0;
+      &--slim::before{
+        width: 200px;
+        height: 195px;
+        background-image: url(../img/icons/cat-slim.svg);
+        background-size: contain;
+        background-position: 50%0;
+        top: 5px;
+        right: -255px;
+        left: auto;
+        z-index: 4;
+      }
+      &--pro::before{
+        width: 268px;
+        height: 200px;
+        background-image: url(../img/icons/cat-pro.svg);
+        background-size: contain;
+        background-position: 50%0;
+        top: 58px;
+        right: -291px;
+        left: auto;
+        z-index: 4;
+      }
+    }
+    &__text{
+      grid-column: 1/2;
+      grid-row: 2/3;
+      border-bottom: 0;
+      font-size: 16px;
+      line-height: 24px;
+      color: global.$black-color;
+      margin-top: 25px;
+    }
+    &__link{
+      grid-column: 1/2;
+      grid-row: 3/4;
+      font-size: 20px;
+      line-height: 30px;
+      justify-self: flex-start;
+      margin-top: 15px;
+      &::after{
+        right: -40px;
+        top: 11px;
+      }
+    }
+    &__bg{
+      grid-column: 2/3;
+      grid-row: 1/4;
+      position: relative;
+      width: 200px;
+      height: 200px;
+      margin-right: 20px;
+      margin-top: 5px;
+    }
+  }
+}
+@media (min-width: global.$desktop-width) {
+  .advertising{
+    padding: 0 110px;
+    margin-top: 20px;
+    &__list{
+      display: flex;
+      gap: 80px;
+    }
+    &__item{
+      display: grid;
+      grid-template-columns: auto;
+      grid-auto-rows: auto auto auto;
+      padding: 40px 60px 40px 50px;
+      flex-basis: 47%;
+    }
+    &__title{
+      padding-left: 164px;
+      padding-top: 26px;
+    }
+    &__bg{
+      width: 100px;
+      height: 100px;
+      grid-column: 1/2;
+      grid-row: 1/2;
+      margin-top: 4px;
+      margin-right: 0;
+      top: 0;
+      left: 0;
+    }
+    &__text{
+      margin-top: 42px;
+      padding-bottom: 0;
+    }
+    &__link{
+      margin-top: 12px;
+      margin-bottom: 18px;
+    }
+  }
+  .advertising__title--pro::before, .advertising__title--slim::before {
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-position: 50%0;
+    top: -11px;
+    left: 0;
+    z-index: 4;
+  }
+  .advertising__title--pro::before{
+    width: 135px;
+    top: 19px;
+    left: -17px;
+  }
+}

@@ -1,0 +1,32 @@
+@use "../global.scss";
+.copyright{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 22px;
+  color: global.$grey-text;
+  &__text {
+    font-family: 'Lato', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    margin: 0;
+    color: global.$grey-text;
+  }
+  &:hover svg{
+    color: global.$basic-green
+  }
+  &:active {
+    opacity: 0.3;
+  }
+}
+@media (min-width: global.$tablet-width) {
+  .copyright {
+    padding-top: 12px;
+    align-self: flex-end;
+    &__text {
+      margin-right: 27px;
+    }
+  }
+}

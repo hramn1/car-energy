@@ -1,0 +1,39 @@
+@forward './variables.scss';
+@forward './mixins.scss';
+
+@font-face {
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/Oswald-Medium.woff2") format("woff2"), url("../fonts/Oswald-Medium.woff") format("woff") ;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Oswald-Regular.woff2") format("woff2"), url("../fonts/Oswald-Regular.woff") format("woff") ;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Lato-Regular.woff2") format("woff2"), url("../fonts/Lato-Regular.woff") format("woff") ;
+  font-display: swap;
+}
+body{
+  margin: 0;
+  background-color: #eeeeee;
+}
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+  object-fit: contain;
+}
+a {
+  text-decoration: none;
+}

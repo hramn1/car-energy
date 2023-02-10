@@ -1,0 +1,117 @@
+@use '../global.scss';
+
+.features{
+  padding: 0 20px 25px;
+  &__title{
+    @include global.text-simple($fz:36px, $lh:40px);
+    margin-top: 20px;
+    margin-bottom: 42px;
+  }
+  &__list{
+    @include global.list();
+  }
+  &__item{
+    padding-left: 80px;
+    font-family: Lato, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    min-height: 50px;
+    color: global.$grey-text;
+    margin-bottom: 26px;
+    position: relative;
+    &::before{
+      @include global.pseudoEl($width: 60px, $height:60px);
+      background-color: global.$basic-green;
+      left:0;
+    }
+    &--leaf::before{
+      background-image: url(../img/icons/icon_leaf.svg);
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+    &--tub::before{
+      background-image: url(../img/icons/icon_tub.svg);
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+    &--eat::before{
+      background-image: url(../img/icons/icon_eat.svg);
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+    &--alarm::before{
+      background-image: url(../img/icons/icon_alarm.svg);
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+  }
+}
+@media (min-width: global.$tablet-width) {
+  .features{
+    padding: 0 30px;
+    &__title{
+      font-size: 60px;
+      line-height: 60px;
+      margin-top: 45px;
+    }
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      counter-reset: list-count;
+      column-gap: 65px;
+    }
+    &__item{
+      flex-basis: 45%;
+      padding: 140px 68px 33px 0;
+      font-size: 16px;
+      line-height: 24px;
+      counter-increment: list-count;
+      z-index: 2;
+      margin-bottom: 70px;
+      &::before{
+        top: 30px;
+        width: 80px;
+        height: 80px;
+      }
+      &::after{
+        @include global.pseudoEl($width:112px, $height: 280px);
+        content: counters(list-count,".") " ";
+        font-family: Oswald, Arial, sans-serif;
+        top: -11px;
+        font-weight: 400;
+        font-size: 280px;
+        line-height: 280px;
+        color: #f2f2f2;
+        z-index: -1;
+        right: 90px;
+      }
+    }
+  }
+}
+@media (min-width: global.$desktop-width) {
+  .features{
+    padding: 0 110px;
+    &__list{
+      margin-right: -12px;
+    }
+    &__item{
+      flex-basis: 20.5%;
+      padding: 140px 0 30px 0;
+      &::after{
+        right: 24px;
+      }
+      &--tub{
+        margin-left: 2px;
+      }
+      &--eat{
+        margin-left: 10px;
+      }
+      &--alarm{
+        margin-left: 12px
+      ;
+      }
+    }
+  }
+}

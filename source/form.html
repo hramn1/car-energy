@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/css/style.min.css" >
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="img/favicons/apple.png">
+  <link rel="icon" href="img/favicons/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="./fonts/Lato-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="./fonts/Oswald-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="./fonts/Oswald-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="manifest" href="manifest.webmanifest">
+  <title>Document</title>
+</head>
+
+<body>
+<header class="header header--inner no-js">
+  <div class="container-header">
+    <nav class="header__nav">
+      <a href="index.html" class="header__logo">
+        <picture>
+          <source media="(min-width: 1440px)" srcset="img/icons/logo-desktop.svg">
+          <source media="(min-width: 768px)" srcset="img/icons/logo-tablet.svg">
+          <img  src="img/icons/logo-mobile.svg" alt="Логотип.">
+        </picture>
+      </a>
+      <picture>
+        <img class="header__img" src="img/icons/logo-text.svg" alt="Логотип.">
+      </picture>
+      <button class="header__btn"></button>
+      <ul class="header__menu">
+        <li class="header__item-menu"><a href="index.html">Главная</a></li>
+        <li class="header__item-menu"><a href="catalog.html">Каталог продукции</a></li>
+        <li class="header__item-menu header__item-menu--active"><a href="#">Подбор Программы</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main class="main main--form">
+  <div class="container-main">
+
+  <h1 class="main__title">Подбор программы</h1>
+  <p class="main__text">Заполните анкету, и мы подберем
+    программу питания для вашего кота</p>
+  <form method="post" class="form" action="https://echo.htmlacademy.ru/">
+    <div class="form__cat">
+      <div class="form__field">
+        <label for="name">ИМЯ:*</label>
+        <input required id="name" value="барсик" name="name" placeholder="имя" type="text">
+      </div>
+      <div class="form__field">
+        <label for="weight">Вес (кг):*</label>
+        <input required id="weight" value="7" name="weight" placeholder="вес" type="text">
+      </div>
+      <div class="form__field">
+        <label for="age">Возраст (лет):</label>
+        <input required id="age" name="age" value="7" placeholder="возраст" type="text">
+      </div>
+    </div>
+    <div class="form__radio">
+      <input type="radio" name="program" class="visually-hidden" value="loss" checked  id="w-loss"><label tabindex="0" for="w-loss" >похудение</label>
+      <input type="radio" name="program" class="visually-hidden" value="grow" id="w-grow"><label tabindex="0" for="w-grow" >Набор массы</label>
+      <input type="radio" name="program" class="visually-hidden" value="tip" id="tip"><label tabindex="0" for="tip" >Не знаю (Нужен ваш совет)</label>
+    </div>
+    <div class="form__owner-cat owner-cat">
+      <h3 class="owner-cat__title">Контактные данные
+        (владельца кота)</h3>
+      <div class="owner-cat__mail">
+        <label for="mail" >E-mail:*</label>
+        <input id="mail" required value="kuklachev@gmail.com" placeholder="email" name="mail" type="email">
+      </div>
+      <div class="owner-cat__phone">
+        <label  for="phone">Телефон:*</label>
+        <input required value="8 (960) 900-60-90" placeholder="телефон" id="phone" name="phone" type="tel">
+      </div>
+      <label class="text-line owner-cat__textarea-label" for="comment">Комментарий</label>
+      <textarea class="owner-cat__textarea" id="comment" name="comment" cols="30" placeholder="Расскажите обо всех повадках кота" rows="8"></textarea>
+    </div>
+    <div class="form__add-it add-it">
+      <h3 class="text-line add-it__title ">Дополнительно</h3>
+      <input  type="checkbox" class="add-it__input visually-hidden" id="sugar" checked name="sugar"><label tabindex="0"  class="add-it__label" for="sugar">сахарозаменитель</label>
+      <input type="checkbox" class="add-it__input visually-hidden" id="water" name="water"><label tabindex="0"  class="add-it__label" for="water">питьевая вода</label>
+      <input type="checkbox" class="add-it__input visually-hidden" id="milk" name="sugar"><label tabindex="0"  class="add-it__label" for="milk">молоко</label>
+      <input type="checkbox" class="add-it__input visually-hidden" id="vit" name="vit"><label tabindex="0"  class="add-it__label" for="vit">витамины</label>
+    </div>
+
+    <button class="form__btn btn" type="submit">отправить заявку</button>
+    <p class="form__text-btn">* — Обязательные поля</p>
+  </form>
+  </div>
+</main>
+<footer  class="footer">
+  <section class="contacts contacts--form">
+    <p class="contacts__text">приглашаем <br> к сотрудничеству дилеров!</p>
+    <address class="contacts__address"><span>ул. Большая
+        Конюшенная, д. 19/8</span>
+      <span>Санкт-Петербург</span></address>
+  </section>
+  <section class="footer__map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7994.126228473118!2d30.322446584913166!3d59.93991494093169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1666179998593!5m2!1sru!2sru"  style="border: 0; width: 100%; height: 100%" title="Магазин Кэт энерджи на карте" allowfullscreen></iframe>
+  </section>
+  <section class="footer__bottom">
+    <div class="footer__logo">
+      <picture>
+        <img src="img/icons/footer-logo.svg" width="128" height="24" alt="Логотип в футере">
+      </picture>
+    </div>
+    <section class="social">
+      <a class="social__link social__link--vk" href="#">
+        <svg width="28" height="22" viewBox="0 0 28 22"  aria-hidden="true" focusable="false" role="img" aria-label="вконтакте.">
+          <use href="./img/sprite.svg#vkontakte"></use>
+        </svg>
+        <span class="visually-hidden">Вконтакте</span>
+      </a>
+      <a class="social__link social__link--youtube" href="#">
+        <svg width="28" height="22" viewBox="0 0 28 22"  aria-hidden="true" focusable="false" role="img" aria-label="Ютуб.">
+          <use href="./img/sprite.svg#youtube"></use>
+        </svg>
+        <span class="visually-hidden">Ютуб</span>
+      </a>
+      <a class="social__link social__link--tg" href="#">
+        <svg width="28" height="22" viewBox="0 0 28 22"  aria-hidden="true" focusable="false" role="img" aria-label="телеграм.">
+          <use href="./img/sprite.svg#telegram"></use>
+        </svg>
+        <span class="visually-hidden">Телеграмм</span>
+      </a>
+    </section>
+    <a class="copyright" href="https://htmlacademy.ru">
+      <span class="copyright__text">HTML Academy</span>
+      <svg width="27" height="34" viewBox="0 0 27 34"  aria-hidden="true" focusable="false" role="img" aria-label="логотип академии.">
+        <use href="./img/sprite.svg#logo_html"></use>
+      </svg>
+    </a>
+  </section>
+</footer>
+
+<script src="./js/script.js"></script>
+
+</body>
+</html>

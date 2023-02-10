@@ -1,0 +1,1 @@
+{"version":3,"sources":["global.scss","style.css"],"names":[],"mappings":"AAAA;EACE,cAAA;EACA,0CAAA;ACCF","file":"style.css","sourcesContent":["body{\n  margin: 0 auto;\n  background-color: rgba(215, 36, 126, 0.45);\n}\n","body {\n  margin: 0 auto;\n  background-color: rgba(215, 36, 126, 0.45);\n}"]}

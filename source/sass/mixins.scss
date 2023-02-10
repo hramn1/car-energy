@@ -1,0 +1,54 @@
+@use 'variables.scss';
+
+@mixin pseudoEl($width: 100%, $height:2px){
+  display: block;
+  content: "";
+  position: absolute;
+  width: $width;
+  height: $height;
+}
+@mixin btn(){
+  color: variables.$white;
+  border: 0;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  background-color: variables.$basic-green;
+  font-family: 'Oswald', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  display: block;
+  margin: 0 auto;
+  padding: 7px 44px;
+  width: 280px;
+  text-transform: uppercase;
+}
+@mixin list(){
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+@mixin visually-hidden() {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+@mixin text-simple($fz: 16px, $lh: 18px){
+  font-family: 'Oswald', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: $fz;
+  line-height: $lh;
+}
+@mixin border(){
+  border: 1px solid #e7e7e7;
+}
